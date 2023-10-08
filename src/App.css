@@ -6,15 +6,7 @@
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
 }
-.header {
-  grid-area: header;
-  background-color: teal;
-}
-.nav {
-  grid-area: nav;
-  background-color: orange;
-}
-.content {
+.app-wrapper-content {
   grid-area: content;
-  background-color: blueviolet;
+    background-color: blueviolet;
 }

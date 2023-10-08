@@ -1,7 +1,8 @@
 import React from 'react'
+import cl from './Header.module.css'
 
 export function Header() {
   return (
-    <header className='header'>header</header>
+    <header className={cl.header}>header</header>
   )
 }

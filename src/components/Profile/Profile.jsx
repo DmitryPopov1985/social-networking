@@ -1,16 +1,15 @@
 
 import React from 'react'
+import cl from './Profile.module.css'
+import { MyPosts } from './MyPosts/MyPosts'
 
 export function Profile() {
   return (
-    <div><div className="content">
-    <div>Большая картинка</div>
-    <div>аватар + описание</div>
-    <div>Мои посты</div>
-    <div>Новые посты</div>
-    <div>пост1</div>
-    <div>пост2</div>
-  </div></div>
+    <div >
+      <div>Большая картинка</div>
+      <div>аватар + описание</div>
+      <MyPosts/>
+    </div>
   )
 }
 
