@@ -1,4 +1,13 @@
 .nav {
     grid-area: nav;
     background-color: orange;
+    padding: 20px;
+}
+.item {
+    color: teal;
+    padding: 10px;
+    font-size: 24px;
+}
+.link.active {
+    color: red;
 }
