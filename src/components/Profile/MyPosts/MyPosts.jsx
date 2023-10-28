@@ -1,22 +1,28 @@
 import React from 'react'
 import cl from './MyPosts.module.css'
 import { Post } from './Post/Post'
+import { addPostAC, updateNewPostAC } from '../../../redux/profile-reducer'
 
-const postsData = [
-  { id: '1', message: "Хорошая погода", likesCount: 7 },
-  { id: '2', message: "Как дела?", likesCount: 0 },
-  { id: '3', message: "Василий, привет", likesCount: 18 },
 
-]
 
-export function MyPosts() {
+export function MyPosts(props) {
+
+  
+  const addPost = () => {
+    
+      props.dispatch(addPostAC())
+  }
+  const updatePostHandler = (e) => {
+    let text = e.target.value
+    props.dispatch(updateNewPostAC(text))
+  }
   return (
     <div>Мои посты
       <div>
-        <textarea ></textarea>
-        <button>Add post</button>
+        <textarea onChange={updatePostHandler} value={props.state.newText  } ></textarea>
+        <button onClick={addPost}>Add post</button>
       </div>
-      {postsData.map(el => <Post message={el.message} likesCount={el.likesCount} />)}
+      {props.state.postsData.map(el => <Post message={el.message} likesCount={el.likesCount} />)}
     </div>
   )
 }

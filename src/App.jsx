@@ -6,15 +6,15 @@ import { Profile } from './components/Profile/Profile';
 import { Dialogs } from './components/Dialogs/Dialogs';
 import { Route, Routes } from 'react-router-dom';
 
-function App() {
+function App(props) {
   return (
     <div className="app__wrapper">
       <Header />
       <Navbar />
       <div className="app-wrapper-content">
         <Routes>
-          <Route path="/dialogs/*" element={<Dialogs />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/dialogs/*" element={<Dialogs state={props.state.dialogsPage} dispatch={props.dispatch} />} />
+          <Route path="/profile" element={<Profile state={props.state.profilePage} dispatch={props.dispatch}/>} />
         </Routes>
       </div>
 

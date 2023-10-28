@@ -2,27 +2,28 @@ import React from 'react'
 import cl from './Dialogs.module.css'
 import { Message } from './Message/Message'
 import { DialogItem } from './DialogItem/DialogItem'
+import { sendNewMessageAC, updateNewMessageAC } from '../../redux/dialogs-reducer'
 
-const dialogsData = [
-  { id: '1', name: "Дмитрий" },
-  { id: '2', name: "Петр" },
-  { id: '3', name: "Василий" },
 
-]
-const messagesData = [
-  { id: '1', message: "Hi" },
-  { id: '2', message: "Yo" },
-  { id: '3', message: "Yo" },
+export function Dialogs(props) {
 
-]
-export function Dialogs() {
+  const updateMessageTextHandler = (e) => {
+    
+    props.dispatch(updateNewMessageAC(e.target.value))
+  }
+  const sendMessageHandler = () => {
+    props.dispatch(sendNewMessageAC())
+
+  }
   return (
     <div className={cl.dialogsWrapper} >
       <div className={cl.dialogs} >
-        {dialogsData.map(el => <DialogItem name={el.name} id={el.id} />)}
+        {props.state.dialogsData.map(el => <DialogItem name={el.name} id={el.id} />)}
       </div>
       <div className={cl.messages} >
-        {messagesData.map(el => <Message message={el.message} />)}
+        {props.state.messagesData.map(el => <Message message={el.message} />)}
+        <div><textarea onChange={updateMessageTextHandler} placeholder='Напишите сообщение' value={props.state.newMessageText}></textarea></div>
+        <div><button onClick={sendMessageHandler} >Отправить</button></div>
       </div>
     </div>
   )
