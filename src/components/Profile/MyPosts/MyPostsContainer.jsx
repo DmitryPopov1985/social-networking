@@ -7,7 +7,6 @@ import { MyPosts } from './MyPosts'
 export function MyPostsContainer(props) {
 
   let state = props.store.getState().profilePage
-  console.log(props.store.getState().profilePage)
   const addPostHandler = () => {
     
       props.store.dispatch(addPostAC())
