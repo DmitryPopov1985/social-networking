@@ -9,7 +9,7 @@ export function Dialogs(props) {
 
   const updateMessageTextHandler = (e) => {
     
-    props.dispatch(updateNewMessageAC(e.target.value))
+    props.dispatch(updateNewMessageAC(e.currentTarget.value))
   }
   const sendMessageHandler = () => {
     props.dispatch(sendNewMessageAC())
