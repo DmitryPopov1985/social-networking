@@ -19,7 +19,7 @@ export function MyPosts(props) {
         <textarea onChange={updatePostHandler} value={props.newText  } ></textarea>
         <button onClick={addPost}>Add post</button>
       </div>
-      {props.postsData.map(el => <Post message={el.message} likesCount={el.likesCount} />)}
+      {props.postsData.map(el => <Post key={el.id} message={el.message} likesCount={el.likesCount} />)}
     </div>
   )
 }

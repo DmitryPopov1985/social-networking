@@ -16,10 +16,10 @@ export function Dialogs(props) {
   return (
     <div className={cl.dialogsWrapper} >
       <div className={cl.dialogs} >
-        {props.dialogsData.map(el => <DialogItem name={el.name} id={el.id} />)}
+        {props.dialogsData.map(el => <DialogItem key={el.id} name={el.name} id={el.id} />)}
       </div>
       <div className={cl.messages} >
-        {props.messagesData.map(el => <Message message={el.message} />)}
+        {props.messagesData.map(el => <Message key={el.id} message={el.message} />)}
         <div><textarea onChange={updateMessageTextHandler} placeholder='Напишите сообщение' value={props.newMessageText}></textarea></div>
         <div><button onClick={sendMessageHandler} >Отправить</button></div>
       </div>

@@ -24,6 +24,9 @@ export function Navbar() {
     <div className={cl.item}>
       <NavLink to="/settings" className = {setActive()} >Настройки</NavLink>
     </div>
+    <div className={cl.item}>
+      <NavLink to="/users" className = {setActive()} >Пользователи</NavLink>
+    </div>
   </nav>
   )
 }
