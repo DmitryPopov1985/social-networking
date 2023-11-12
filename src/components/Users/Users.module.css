@@ -1,1 +1,28 @@
-
+.userWrapper {
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid orange;
+}
+.photoImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid orange;
+}
+.userName {
+    font-size: 20px;
+    font-weight: 700;
+    color: orange;
+}
+.userBtn {
+    background-color: orange;
+    padding: 10px 20px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.selectedPage {
+    font-weight: bold;
+}
