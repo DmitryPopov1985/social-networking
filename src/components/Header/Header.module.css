@@ -1,4 +1,9 @@
 .header {
     grid-area: header;
     background-color: teal;
+    display: flex;
+    justify-content: space-between;
+}
+.loginWrapper {
+    padding: 15px;
 }
