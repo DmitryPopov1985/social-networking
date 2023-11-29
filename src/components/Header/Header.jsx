@@ -9,7 +9,7 @@ export function Header(props) {
       <div className={ cl.loginWrapper } >
         {
         props.isAuth 
-        ? <NavLink to={'/auth/'} >Registration</NavLink>
+        ? <NavLink to={'/auth/'} >{props.login}</NavLink>
         : <NavLink to={'/auth/'} >Login</NavLink>
         }
       </div>

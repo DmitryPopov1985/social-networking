@@ -3,7 +3,6 @@ import React from 'react'
 import userPhoto from '../../assets/images/user.png'
 import cl from './Users.module.css'
 import { NavLink } from 'react-router-dom'
-import axios from 'axios'
 
 
 export function Users(props) {
@@ -24,30 +23,11 @@ export function Users(props) {
         <NavLink to={'/profile/' + user.id} ><img className={cl.photoImage} src={user.photos.small !== null ? user.photos.small : userPhoto} alt="user icon" /></NavLink>
 
         {user.followed
-          ? <button disabled={props.followingInProgress.some(id => id === user.id)} className={cl.userBtn} onClick={() => { 
-            props.toggleFollowingInProgress(true, user.id)
-            axios
-              .delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`,{withCredentials:true, headers:     {
-                "API-KEY": "8f23f6f1-7487-4cd8-b331-f77e77d7cb67"
-            }})
-              .then(response => {
-                if (response.data.resultCode === 0) {
-                  props.unfollow(user.id)
-                }
-                props.toggleFollowingInProgress(false,user.id)
-              }) }} >Удалить из друзей</button>
+          ? <button disabled={props.followingInProgress.some(id => id === user.id)} className={cl.userBtn} onClick={() => {
+            props.unfollow(user.id)
+          }} >Удалить из друзей</button>
           : <button disabled={props.followingInProgress.some(id => id === user.id)} className={cl.userBtn} onClick={() => {
-            props.toggleFollowingInProgress(true, user.id)
-            axios
-              .post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`,{},{withCredentials:true, headers:     {
-                "API-KEY": "8f23f6f1-7487-4cd8-b331-f77e77d7cb67"
-            }})
-              .then(response => {
-                if (response.data.resultCode === 0) {
-                  props.follow(user.id)
-                }
-                props.toggleFollowingInProgress(false, user.id)
-              })
+            props.follow(user.id)
           }} >Добавить в друзья</button>
         }
       </div>)}
