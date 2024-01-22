@@ -16,3 +16,4 @@ import { Provider } from "react-redux";
       </BrowserRouter>
     </React.StrictMode>
   );
+  window.store = store
