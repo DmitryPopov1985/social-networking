@@ -9,7 +9,7 @@ export function Header(props) {
       <div className={ cl.loginWrapper } >
         {
         props.isAuth 
-        ? <NavLink to={'/auth/'} >{props.login}</NavLink>
+        ? <NavLink to={'/auth/'} >{props.login} <button onClick={props.logout} >Log out</button> </NavLink>
         : <NavLink to={'/auth/'} >Login</NavLink>
         }
       </div>

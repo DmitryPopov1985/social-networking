@@ -10,3 +10,7 @@
   grid-area: content;
     background-color: blueviolet;
 }
+.app-wrapper-content img{
+  object-fit: cover;
+  max-width: 200px;
+}
